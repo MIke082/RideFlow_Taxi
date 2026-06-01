@@ -75,10 +75,10 @@ export default function Home() {
                   {concept.description}
                 </p>
               </div>
-              <svg 
-                className="w-5 h-5 text-gray-400 group-hover:text-[#0071E3] group-hover:translate-x-1 transition-all shrink-0" 
-                fill="none" 
-                stroke="currentColor" 
+              <svg
+                className="w-5 h-5 text-gray-400 group-hover:text-[#0071E3] group-hover:translate-x-1 transition-all shrink-0"
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -87,9 +87,48 @@ export default function Home() {
           ))}
         </div>
 
-        <p className="text-center text-sm text-gray-400 mt-12">
-          Каждая ссылка открывается в новой вкладке
-        </p>
+        <div className="mt-12 bg-white border border-gray-200 rounded-3xl p-8 shadow-sm">
+          <h3 className="text-xl font-semibold text-gray-900 mb-6">
+            Дополнительные расходы
+          </h3>
+
+          <div className="space-y-5 text-sm text-gray-600">
+            <div className="flex gap-3">
+              <span className="text-[#0071E3] font-bold">•</span>
+              <p>
+                <span className="font-medium text-gray-900">Доменное имя</span>
+                <br />
+                Например: yourcompany.co.il или yourcompany.com — обычно от 50 до 150 ₪ в год.
+              </p>
+            </div>
+
+            <div className="flex gap-3">
+              <span className="text-[#0071E3] font-bold">•</span>
+              <p>
+                <span className="font-medium text-gray-900">Хостинг сайта</span>
+                <br />
+                Возможны как платные варианты (примерно от 20 до 200 ₪ в месяц),
+                так и бесплатные решения для небольших проектов.
+              </p>
+            </div>
+
+            <div className="flex gap-3">
+              <span className="text-[#0071E3] font-bold">•</span>
+              <p>
+                <span className="font-medium text-gray-900">Онлайн-платежи</span>
+                <br />
+                При необходимости подключения оплаты на сайте комиссии и стоимость
+                обслуживания зависят от выбранной платёжной системы и оплачиваются напрямую поставщику услуг.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 p-4 rounded-2xl bg-blue-50 border border-blue-100">
+            <p className="text-sm text-blue-900">
+              При необходимости мы поможем подобрать оптимальное решение и настроить все необходимые сервисы.
+            </p>
+          </div>
+        </div>
       </div>
     </main>
   )
