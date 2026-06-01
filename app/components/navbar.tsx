@@ -24,7 +24,7 @@ interface NavbarProps {
 
 const langLabels = {
   ru: "Русский",
-  en: "English",
+  en: "English", 
   he: "עברית"
 }
 
@@ -70,11 +70,11 @@ export default function Navbar({ lang, setLang, variant = "apple", translations:
       border: "border-white/10",
     },
     bold: {
-      bg: "bg-[#FEF3C7]/95",
+      bg: "bg-[#FCD34D]/95",
       text: "text-black",
       textMuted: "text-black/70",
       accent: "text-black",
-      accentBg: "bg-black text-white",
+      accentBg: "bg-black text-[#FCD34D]",
       logo: "bg-black",
       border: "border-black/10",
     },
@@ -104,7 +104,7 @@ export default function Navbar({ lang, setLang, variant = "apple", translations:
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Language Dropdown */}
             <div className="relative">
-              <button
+              <button 
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                 className={`flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-lg text-xs sm:text-sm ${v.textMuted} hover:bg-black/5 transition-colors`}
               >
@@ -114,7 +114,7 @@ export default function Navbar({ lang, setLang, variant = "apple", translations:
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-
+              
               {langDropdownOpen && (
                 <>
                   <div className="fixed inset-0 z-40" onClick={() => setLangDropdownOpen(false)} />
@@ -135,7 +135,7 @@ export default function Navbar({ lang, setLang, variant = "apple", translations:
             </div>
 
             {/* Login Button */}
-            <Link
+            <Link 
               href={loginPath}
               className={`px-3 sm:px-4 py-2 text-xs sm:text-sm ${v.accent} font-medium hover:bg-black/5 rounded-full transition-colors`}
             >
@@ -143,7 +143,7 @@ export default function Navbar({ lang, setLang, variant = "apple", translations:
             </Link>
 
             {/* Mobile Menu Button */}
-            <button
+            <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`md:hidden p-2 rounded-lg ${v.textMuted} hover:bg-black/5`}
             >

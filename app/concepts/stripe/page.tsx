@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import dynamic from "next/dynamic"
+import Navbar from "@/app/components/navbar"
 
 const MapComponent = dynamic(() => import("../apple/map"), { ssr: false })
 
@@ -173,24 +174,13 @@ export default function StripeConcept() {
       </a>
 
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A2540]/90 backdrop-blur-lg">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="text-2xl font-bold text-white">RideFlow</span>
-          <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
-            <a href="#pricing" className="hover:text-white">{t.nav.pricing}</a>
-            <a href="#reviews" className="hover:text-white">{t.nav.reviews}</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex gap-1 text-xs">
-              {(["ru", "en", "he"] as Lang[]).map(l => (
-                <button key={l} onClick={() => setLang(l)} className={`px-2 py-1 rounded text-white ${lang === l ? "bg-white/20" : "hover:bg-white/10"}`}>{l.toUpperCase()}</button>
-              ))}
-            </div>
-            <a href="/concepts/stripe/login" className="text-sm text-white/70 hover:text-white">{t.nav.login}</a>
-            <button onClick={scrollToMap} className="px-4 py-2 bg-white text-[#0A2540] text-sm font-semibold rounded-full hover:bg-gray-100">{t.nav.order}</button>
-          </div>
-        </div>
-      </nav>
+      <Navbar 
+        lang={lang} 
+        setLang={setLang} 
+        variant="stripe" 
+        translations={t}
+        loginPath="/concepts/stripe/login"
+      />
 
       {/* Hero */}
       <section className="pt-28 pb-20 px-6">

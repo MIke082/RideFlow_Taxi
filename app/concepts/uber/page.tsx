@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import dynamic from "next/dynamic"
+import Navbar from "@/app/components/navbar"
 
 const MapComponent = dynamic(() => import("../apple/map"), { ssr: false })
 
@@ -175,25 +176,13 @@ export default function UberConcept() {
       </a>
 
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black text-white">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <span className="text-2xl font-black">RideFlow</span>
-          <div className="hidden md:flex items-center gap-8 text-sm">
-            <a href="#features" className="hover:text-gray-300">{t.nav.about}</a>
-            <a href="#map" className="hover:text-gray-300">{t.nav.routes}</a>
-            <a href="#pricing" className="hover:text-gray-300">{t.nav.pricing}</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex gap-1 text-xs">
-              {(["ru", "en", "he"] as Lang[]).map(l => (
-                <button key={l} onClick={() => setLang(l)} className={`px-2 py-1 rounded ${lang === l ? "bg-white text-black" : "hover:bg-white/10"}`}>{l.toUpperCase()}</button>
-              ))}
-            </div>
-            <a href="/concepts/uber/login" className="text-sm hover:text-gray-300">{t.nav.login}</a>
-            <button onClick={scrollToMap} className="px-4 py-2 bg-white text-black text-sm font-semibold rounded hover:bg-gray-100">{t.nav.order}</button>
-          </div>
-        </div>
-      </nav>
+      <Navbar 
+        lang={lang} 
+        setLang={setLang} 
+        variant="uber" 
+        translations={t}
+        loginPath="/concepts/uber/login"
+      />
 
       {/* Hero */}
       <section className="pt-24 pb-16 px-6 bg-black text-white">

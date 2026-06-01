@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import dynamic from "next/dynamic"
+import Navbar from "@/app/components/navbar"
 
 const MapComponent = dynamic(() => import("../apple/map"), { ssr: false })
 
@@ -115,7 +116,7 @@ const cities = {
     { id: "jerusalem", name: "Иерусалим", coords: [31.7683, 35.2137] as [number, number] },
     { id: "telaviv", name: "Тель-Авив", coords: [32.0853, 34.7818] as [number, number] },
     { id: "haifa", name: "Хайфа", coords: [32.7940, 34.9896] as [number, number] },
-    { id: "bengurion", name: "Бен-Гурион", coords: [32.0055, 34.8854] as [number, number] },
+    { id: "bengurion", name: "Б��н-Гурион", coords: [32.0055, 34.8854] as [number, number] },
   ],
   en: [
     { id: "jerusalem", name: "Jerusalem", coords: [31.7683, 35.2137] as [number, number] },
@@ -171,23 +172,13 @@ export default function SaaSConcept() {
       </a>
 
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
-        <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-violet-500 to-purple-600 rounded-lg"></div>
-            <span className="text-xl font-bold">RideFlow</span>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex gap-1 text-xs">
-              {(["ru", "en", "he"] as Lang[]).map(l => (
-                <button key={l} onClick={() => setLang(l)} className={`px-2 py-1 rounded ${lang === l ? "bg-violet-500 text-white" : "hover:bg-gray-100"}`}>{l.toUpperCase()}</button>
-              ))}
-            </div>
-            <a href="/concepts/saas/login" className="text-sm text-gray-600 hover:text-gray-900">{t.nav.login}</a>
-            <button onClick={scrollToMap} className="px-4 py-2 bg-violet-500 text-white text-sm font-medium rounded-full hover:bg-violet-600">{t.nav.order}</button>
-          </div>
-        </div>
-      </nav>
+      <Navbar 
+        lang={lang} 
+        setLang={setLang} 
+        variant="saas" 
+        translations={t}
+        loginPath="/concepts/saas/login"
+      />
 
       {/* Hero */}
       <section className="pt-32 pb-20 px-6 text-center">

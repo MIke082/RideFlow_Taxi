@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import dynamic from "next/dynamic"
+import Navbar from "@/app/components/navbar"
 
 const MapComponent = dynamic(() => import("./map"), { ssr: false })
 
@@ -321,35 +322,13 @@ export default function AppleConcept() {
       </a>
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#FBFBFD]/80 backdrop-blur-xl border-b border-black/5">
-        <div className="max-w-[1100px] mx-auto px-6 h-14 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full bg-[#0071E3]"></span>
-            <span className="text-xl font-bold text-[#1D1D1F]">RideFlow</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8 text-sm text-[#1D1D1F]/80">
-            <a href="#about" className="hover:text-[#0071E3]">{t.nav.about}</a>
-            <a href="#map" className="hover:text-[#0071E3]">{t.nav.routes}</a>
-            <a href="#pricing" className="hover:text-[#0071E3]">{t.nav.pricing}</a>
-            <a href="#reviews" className="hover:text-[#0071E3]">{t.nav.reviews}</a>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-1 text-xs">
-              {(["ru", "en", "he"] as Lang[]).map(l => (
-                <button key={l} onClick={() => setLang(l)} className={`px-2 py-1 rounded ${lang === l ? "bg-[#0071E3] text-white" : "hover:bg-black/5"}`}>
-                  {l.toUpperCase()}
-                </button>
-              ))}
-            </div>
-            <a href="/concepts/apple/login" className="px-4 py-2 text-sm text-[#0071E3] font-medium hover:bg-[#0071E3]/10 rounded-full transition-colors">
-              {t.nav.login}
-            </a>
-            <a href="#map" onClick={(e) => { e.preventDefault(); scrollToMap(); }} className="px-4 py-2 bg-[#0071E3] text-white text-sm font-medium rounded-full hover:bg-[#0077ED]">
-              {t.nav.order}
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Navbar 
+        lang={lang} 
+        setLang={setLang} 
+        variant="apple" 
+        translations={t}
+        loginPath="/concepts/apple/login"
+      />
 
       {/* Hero */}
       <section id="hero" className="pt-28 pb-20 px-6">

@@ -11,7 +11,7 @@ const concepts = [
   },
   {
     id: 2,
-    name: "Balck стиль",
+    name: "Black стиль",
     path: "/concepts/uber",
     description: "Слева форма, справа карточки с иконками. Тёмные кнопки",
     color: "bg-black",
@@ -19,7 +19,7 @@ const concepts = [
   },
   {
     id: 3,
-    name: "SaaS стиль",
+    name: "Jitter стиль",
     path: "/concepts/saas",
     description: "Огромный заголовок по центру, badge сверху, один CTA",
     color: "bg-violet-600",
@@ -59,7 +59,7 @@ export default function Home() {
             <Link
               key={concept.id}
               href={concept.ready ? concept.path : "#"}
-              target={concept.ready ? "_blank" : undefined}
+              // target={concept.ready ? "_blank" : undefined}
               className={`flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-lg hover:border-[#0071E3]/20 transition-all group ${!concept.ready ? "opacity-50 cursor-not-allowed" : ""}`}
             >
               <div className={`w-12 h-12 rounded-xl ${concept.color} flex items-center justify-center text-white font-bold text-lg shrink-0`}>
