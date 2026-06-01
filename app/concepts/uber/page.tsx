@@ -181,7 +181,7 @@ export default function UberConcept() {
         setLang={setLang} 
         variant="uber" 
         translations={t}
-        loginPath="/concepts/uber/login"
+        loginPath="/concepts/apple/login"
       />
 
       {/* Hero */}

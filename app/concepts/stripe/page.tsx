@@ -27,87 +27,105 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 const translations = {
   ru: {
     dir: "ltr" as const,
-    nav: { pricing: "Тарифы", reviews: "Отзывы", login: "Войти", order: "Заказать" },
+    nav: { about: "О нас", routes: "Маршруты", pricing: "Тарифы", reviews: "Отзывы", login: "Войти", order: "Заказать" },
     hero: { badge: "Трансферы по Израилю", title: "Платите ", titleHighlight: "только за поездку", subtitle: "Прозрачное ценообразование. Фиксированная стоимость до начала поездки.", from: "Откуда", to: "Куда", date: "Дата", time: "Время", calculate: "Рассчитать стоимость" },
-    pricing: { title: "Простые и понятные тарифы", cards: [
-      { name: "Дневной", price: "Базовый", desc: "06:00 - 21:00", features: ["Фикс цена", "Кондиционер", "Багаж включён"] },
-      { name: "Ночной", price: "+25%", desc: "21:00 - 06:00", features: ["Всё из дневного", "Ночная надбавка", "Приоритет"] },
-      { name: "Шаббат", price: "+25%", desc: "Пт вечер - Сб", features: ["Всё из дневного", "Праздничный тариф", "Без отмен"] },
-    ]},
+    pricing: {
+      title: "Простые и понятные тарифы", cards: [
+        { name: "Дневной", price: "Базовый", desc: "06:00 - 21:00", features: ["Фикс цена", "Кондиционер", "Багаж включён"] },
+        { name: "Ночной", price: "+25%", desc: "21:00 - 06:00", features: ["Всё из дневного", "Ночная надбавка", "Приоритет"] },
+        { name: "Шаббат", price: "+25%", desc: "Пт вечер - Сб", features: ["Всё из дневного", "Праздничный тариф", "Без отмен"] },
+      ]
+    },
     features: [
       { icon: "💳", title: "Карта или наличные" },
       { icon: "📍", title: "Трек на карте" },
       { icon: "💬", title: "WhatsApp связь" },
       { icon: "✈️", title: "Аэропорт 24/7" },
     ],
-    reviews: { title: "Нам доверяют", items: [
-      { text: "Пользуюсь уже год. Ни разу не подвели!", name: "Алексей М.", role: "Бизнесмен" },
-      { text: "Отличный сервис, рекомендую всем!", name: "Мария К.", role: "Туристка" },
-      { text: "Лучшее такси в Израиле по соотношению цена/качество.", name: "Дмитрий С.", role: "Репатриант" },
-    ]},
-    faq: { title: "Вопросы и ответы", items: [
-      { q: "Как оплатить поездку?", a: "Картой или наличными водителю." },
-      { q: "Можно заказать заранее?", a: "Да, укажите дату и время." },
-      { q: "Есть детское кресло?", a: "Да, укажите при заказе." },
-    ]},
+    reviews: {
+      title: "Нам доверяют", items: [
+        { text: "Пользуюсь уже год. Ни разу не подвели!", name: "Алексей М.", role: "Бизнесмен" },
+        { text: "Отличный сервис, рекомендую всем!", name: "Мария К.", role: "Туристка" },
+        { text: "Лучшее такси в Израиле по соотношению цена/качество.", name: "Дмитрий С.", role: "Репатриант" },
+      ]
+    },
+    faq: {
+      title: "Вопросы и ответы", items: [
+        { q: "Как оплатить поездку?", a: "Картой или наличными водителю." },
+        { q: "Можно заказать заранее?", a: "Да, укажите дату и время." },
+        { q: "Есть детское кресло?", a: "Да, укажите при заказе." },
+      ]
+    },
     cta: { title: "Начните экономить сегодня", btn: "Заказать поездку" },
     footer: { rights: "Все права защищены" },
     map: { price: "Стоимость", km: "км" },
   },
   en: {
     dir: "ltr" as const,
-    nav: { pricing: "Pricing", reviews: "Reviews", login: "Login", order: "Book" },
+    nav: { about: "About", routes: "Routes", pricing: "Pricing", reviews: "Reviews", login: "Login", order: "Book" },
     hero: { badge: "Israel Transfers", title: "Pay ", titleHighlight: "only for the ride", subtitle: "Transparent pricing. Fixed cost before the trip.", from: "From", to: "To", date: "Date", time: "Time", calculate: "Calculate price" },
-    pricing: { title: "Simple and clear pricing", cards: [
-      { name: "Day", price: "Base", desc: "06:00 - 21:00", features: ["Fixed price", "AC included", "Luggage included"] },
-      { name: "Night", price: "+25%", desc: "21:00 - 06:00", features: ["All from day", "Night surcharge", "Priority"] },
-      { name: "Shabbat", price: "+25%", desc: "Fri eve - Sat", features: ["All from day", "Holiday rate", "No cancellations"] },
-    ]},
+    pricing: {
+      title: "Simple and clear pricing", cards: [
+        { name: "Day", price: "Base", desc: "06:00 - 21:00", features: ["Fixed price", "AC included", "Luggage included"] },
+        { name: "Night", price: "+25%", desc: "21:00 - 06:00", features: ["All from day", "Night surcharge", "Priority"] },
+        { name: "Shabbat", price: "+25%", desc: "Fri eve - Sat", features: ["All from day", "Holiday rate", "No cancellations"] },
+      ]
+    },
     features: [
       { icon: "💳", title: "Card or cash" },
       { icon: "📍", title: "Track on map" },
       { icon: "💬", title: "WhatsApp contact" },
       { icon: "✈️", title: "Airport 24/7" },
     ],
-    reviews: { title: "Trusted by many", items: [
-      { text: "Using for a year. Never let me down!", name: "Alex M.", role: "Businessman" },
-      { text: "Great service, recommend to everyone!", name: "Maria K.", role: "Tourist" },
-      { text: "Best taxi in Israel for value.", name: "Dmitry S.", role: "Expat" },
-    ]},
-    faq: { title: "FAQ", items: [
-      { q: "How to pay?", a: "Card or cash to driver." },
-      { q: "Can I book ahead?", a: "Yes, specify date and time." },
-      { q: "Child seat available?", a: "Yes, mention when booking." },
-    ]},
+    reviews: {
+      title: "Trusted by many", items: [
+        { text: "Using for a year. Never let me down!", name: "Alex M.", role: "Businessman" },
+        { text: "Great service, recommend to everyone!", name: "Maria K.", role: "Tourist" },
+        { text: "Best taxi in Israel for value.", name: "Dmitry S.", role: "Expat" },
+      ]
+    },
+    faq: {
+      title: "FAQ", items: [
+        { q: "How to pay?", a: "Card or cash to driver." },
+        { q: "Can I book ahead?", a: "Yes, specify date and time." },
+        { q: "Child seat available?", a: "Yes, mention when booking." },
+      ]
+    },
     cta: { title: "Start saving today", btn: "Book a ride" },
     footer: { rights: "All rights reserved" },
     map: { price: "Price", km: "km" },
   },
   he: {
     dir: "rtl" as const,
-    nav: { pricing: "מחירים", reviews: "ביקורות", login: "התחבר", order: "הזמן" },
+    nav: { about: "אודות", routes: "מסלולים", pricing: "מחירים", reviews: "ביקורות", login: "התחבר", order: "הזמן" },
     hero: { badge: "הסעות בישראל", title: "שלם ", titleHighlight: "רק על הנסיעה", subtitle: "תמחור שקוף. מחיר קבוע לפני הנסיעה.", from: "מאיפה", to: "לאן", date: "תאריך", time: "שעה", calculate: "חשב מחיר" },
-    pricing: { title: "תמחור פשוט וברור", cards: [
-      { name: "יום", price: "בסיס", desc: "06:00 - 21:00", features: ["מחיר קבוע", "מזגן כלול", "מזוודות כלול"] },
-      { name: "לילה", price: "+25%", desc: "21:00 - 06:00", features: ["הכל מיום", "תוספת לילה", "עדיפות"] },
-      { name: "שבת", price: "+25%", desc: "שישי ערב - שבת", features: ["הכל מיום", "תעריף חג", "ללא ביטולים"] },
-    ]},
+    pricing: {
+      title: "תמחור פשוט וברור", cards: [
+        { name: "יום", price: "בסיס", desc: "06:00 - 21:00", features: ["מחיר קבוע", "מזגן כלול", "מזוודות כלול"] },
+        { name: "לילה", price: "+25%", desc: "21:00 - 06:00", features: ["הכל מיום", "תוספת לילה", "עדיפות"] },
+        { name: "שבת", price: "+25%", desc: "שישי ערב - שבת", features: ["הכל מיום", "תעריף חג", "ללא ביטולים"] },
+      ]
+    },
     features: [
       { icon: "💳", title: "כרטיס או מזומן" },
       { icon: "📍", title: "מעקב במפה" },
       { icon: "💬", title: "קשר WhatsApp" },
       { icon: "✈️", title: "שדה תעופה 24/7" },
     ],
-    reviews: { title: "סומכים עלינו", items: [
-      { text: "משתמש כבר שנה. אף פעם לא אכזבו!", name: "אלכס מ.", role: "איש עסקים" },
-      { text: "שירות מעולה, ממליץ לכולם!", name: "מריה כ.", role: "תיירת" },
-      { text: "המונית הטובה בישראל ביחס מחיר/איכות.", name: "דמיטרי ס.", role: "עולה חדש" },
-    ]},
-    faq: { title: "שאלות ותשובות", items: [
-      { q: "איך משלמים?", a: "כרטיס או מזומן לנהג." },
-      { q: "אפשר להזמין מראש?", a: "כן, ציין תאריך ושעה." },
-      { q: "יש כיסא ילדים?", a: "כן, ציין בהזמנה." },
-    ]},
+    reviews: {
+      title: "סומכים עלינו", items: [
+        { text: "משתמש כבר שנה. אף פעם לא אכזבו!", name: "אלכס מ.", role: "איש עסקים" },
+        { text: "שירות מעולה, ממליץ לכולם!", name: "מריה כ.", role: "תיירת" },
+        { text: "המונית הטובה בישראל ביחס מחיר/איכות.", name: "דמיטרי ס.", role: "עולה חדש" },
+      ]
+    },
+    faq: {
+      title: "שאלות ותשובות", items: [
+        { q: "איך משלמים?", a: "כרטיס או מזומן לנהג." },
+        { q: "אפשר להזמין מראש?", a: "כן, ציין תאריך ושעה." },
+        { q: "יש כיסא ילדים?", a: "כן, ציין בהזמנה." },
+      ]
+    },
     cta: { title: "התחל לחסוך היום", btn: "הזמן נסיעה" },
     footer: { rights: "כל הזכויות שמורות" },
     map: { price: "מחיר", km: "ק״מ" },
@@ -170,16 +188,16 @@ export default function StripeConcept() {
     <div className="min-h-screen bg-[#0A2540]" dir={t.dir} style={{ fontFamily: 'system-ui, sans-serif' }}>
       {/* WhatsApp Float */}
       <a href="https://wa.me/972501234567" target="_blank" className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform">
-        <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+        <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /></svg>
       </a>
 
       {/* Nav */}
-      <Navbar 
-        lang={lang} 
-        setLang={setLang} 
-        variant="stripe" 
+      <Navbar
+        lang={lang}
+        setLang={setLang}
+        variant="stripe"
         translations={t}
-        loginPath="/concepts/stripe/login"
+        loginPath="/concepts/apple/login"
       />
 
       {/* Hero */}
@@ -199,7 +217,7 @@ export default function StripeConcept() {
               ))}
             </div>
           </div>
-          
+
           {/* Booking Card */}
           <div className="bg-white rounded-2xl p-6 shadow-2xl">
             <div className="space-y-4">

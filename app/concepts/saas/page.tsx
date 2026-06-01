@@ -27,7 +27,7 @@ function AnimatedSection({ children, className = "", delay = 0 }: { children: Re
 const translations = {
   ru: {
     dir: "ltr" as const,
-    nav: { login: "Войти", order: "Заказать" },
+    nav: { about: "О нас", routes: "Маршруты", pricing: "Тарифы", reviews: "Отзывы", login: "Войти", order: "Заказать" },
     hero: { badge: "Новое в Израиле", title: "Трансфер который работает", subtitle: "Фиксированная цена до начала поездки. Без счётчика. Без сюрпризов.", from: "Откуда", to: "Куда", date: "Дата", time: "Время", calculate: "Узнать цену" },
     trust: ["Yandex Go", "Gett", "Bolt", "Uber"],
     features: { title: "Почему выбирают нас", items: [
@@ -55,7 +55,7 @@ const translations = {
   },
   en: {
     dir: "ltr" as const,
-    nav: { login: "Login", order: "Book" },
+    nav: { about: "About", routes: "Routes", pricing: "Pricing", reviews: "Reviews", login: "Login", order: "Book" },
     hero: { badge: "New in Israel", title: "Transfers that work", subtitle: "Fixed price before the trip. No meter. No surprises.", from: "From", to: "To", date: "Date", time: "Time", calculate: "Get price" },
     trust: ["Yandex Go", "Gett", "Bolt", "Uber"],
     features: { title: "Why choose us", items: [
@@ -83,7 +83,7 @@ const translations = {
   },
   he: {
     dir: "rtl" as const,
-    nav: { login: "התחבר", order: "הזמן" },
+    nav: { about: "אודות", routes: "מסלולים", pricing: "מחירים", reviews: "ביקורות", login: "התחבר", order: "הזמן" },
     hero: { badge: "חדש בישראל", title: "הסעות שעובדות", subtitle: "מחיר קבוע לפני הנסיעה. בלי מונה. בלי הפתעות.", from: "מאיפה", to: "לאן", date: "תאריך", time: "שעה", calculate: "קבל מחיר" },
     trust: ["Yandex Go", "Gett", "Bolt", "Uber"],
     features: { title: "למה בוחרים בנו", items: [
@@ -177,7 +177,7 @@ export default function SaaSConcept() {
         setLang={setLang} 
         variant="saas" 
         translations={t}
-        loginPath="/concepts/saas/login"
+        loginPath="/concepts/apple/login"
       />
 
       {/* Hero */}
